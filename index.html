@@ -7,21 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#profile">Profil</a></li>
+            <li><a href="#berufliche-laufbahn">Berufliche Laufbahn</a></li>
+            <li><a href="#ausbildung">Ausbildung</a></li>
+            <li><a href="#kenntnisse">Kenntnisse & Fähigkeiten</a></li>
+            <li><a href="#militärdienst">Militärdienst</a></li>
+            <li><a href="#hobbys">Hobbys</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
     <header>
         <h1>Rilind Daki (1997)</h1>
         <p>Sanitärinstallateur EFZ, dipl. Kaufmann VSH</p>
     </header>
     
-    <section class="profile">
-        <img src="bild.jpg" alt="Profilbild von Rilind Daki">
-        <ul>
-            <li>📞 078 917 38 33</li>
-            <li>📧 lind.daki@hotmail.com</li>
-            <li>📍 Oberer Aaregweg 98, 3004 Bern</li>
-        </ul>
+    <section id="profile" class="profile">
+        <div class="profile-image">
+            <img src="Bild.jpg" alt="Profilbild von Rilind Daki">
+        </div>
+        <div class="profile-details">
+            <ul>
+                <li>📞 078 917 38 33</li>
+                <li>📧 lind.daki@hotmail.com</li>
+                <li>📍 Oberer Aaregweg 98, 3004 Bern</li>
+            </ul>
+        </div>
     </section>
     
-    <section class="berufliche-laufbahn">
+    <section id="berufliche-laufbahn" class="berufliche-laufbahn">
         <h2>Berufliche Laufbahn</h2>
         <div class="laufbahn-item">
             <h3>Bauleitender Monteur - Equans AG, Bern</h3>
@@ -32,7 +49,7 @@
             </ul>
         </div>
         <div class="laufbahn-item">
-            <h3>Sanitärinstallateur EFZ - Freie Temporär GmbH, Oster­mundigen</h3>
+            <h3>Sanitärinstallateur EFZ - Freie Temporär GmbH, Ostermundigen</h3>
             <p>04.2021 - 08.2022</p>
             <ul>
                 <li>Apparatemontage</li>
@@ -40,7 +57,7 @@
             </ul>
         </div>
         <div class="laufbahn-item">
-            <h3>Sanitärinstallateur EFZ - HJ. Aeschbacher, Mühle­berg</h3>
+            <h3>Sanitärinstallateur EFZ - HJ. Aeschbacher, Mühleberg</h3>
             <p>06.2018 - 03.2021</p>
             <ul>
                 <li>Baustellenleitung</li>
@@ -49,7 +66,7 @@
             </ul>
         </div>
         <div class="laufbahn-item">
-            <h3>Sanitärinstallateur EFZ - Gehatec AG, Hasle b. Burg­dorf</h3>
+            <h3>Sanitärinstallateur EFZ - Gehatec AG, Hasle b. Burgdorf</h3>
             <p>08.2013 - 07.2017</p>
             <ul>
                 <li>Rohrinstallationen</li>
@@ -59,7 +76,7 @@
         </div>
     </section>
     
-    <section class="ausbildung">
+    <section id="ausbildung" class="ausbildung">
         <h2>Ausbildung</h2>
         <div class="ausbildung-item">
             <h3>Dipl. Kaufmann VSH, Handelsdiplom VSH - Feusi, Bern</h3>
@@ -71,8 +88,8 @@
         </div>
     </section>
     
-    <section class="kenntnisse">
-        <h2>Kentnisse & Fähigkeiten</h2>
+    <section id="kenntnisse" class="kenntnisse">
+        <h2>Kenntnisse & Fähigkeiten</h2>
         <ul>
             <li>Deutsch (Muttersprache)</li>
             <li>Albanisch (Muttersprache)</li>
@@ -86,7 +103,7 @@
         </ul>
     </section>
     
-    <section class="militärdienst">
+    <section id="militärdienst" class="militärdienst">
         <h2>Militärdienst Schweizerische Armee</h2>
         <div class="militär-item">
             <h3>Wachtmeister, Funktion Führungstaffelsoldat - Kaserne Thun</h3>
@@ -98,13 +115,13 @@
         </div>
     </section>
     
-    <section class="hobbys">
+    <section id="hobbys" class="hobbys">
         <h2>Hobbys</h2>
         <p>Sport: Fussball, Fitness und Schwimmen</p>
         <p>Reisen</p>
     </section>
     
-    <footer>
+    <footer id="kontakt">
         <form action="https://dein-server-endpunkt.com" method="POST">
             <label for="message">Schicke mir eine Nachricht:</label>
             <textarea id="message" name="message" required></textarea>
