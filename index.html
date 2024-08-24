@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
     <!-- Google Fonts Einbindung -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation mit Rolle und Aria-Label -->
+    <!-- Navigation -->
     <nav role="navigation" aria-label="Hauptnavigation">
         <ul>
             <li><a href="#profile">Profil</a></li>
@@ -28,15 +27,14 @@
         </ul>
     </nav>
 
-    <header role="banner">
+    <header>
         <h1>Rilind Daki (1997)</h1>
         <p>Sanitärinstallateur EFZ, dipl. Kaufmann VSH</p>
     </header>
     
-    <section id="profile" class="profile" role="region">
+    <section id="profile" class="profile">
         <div class="profile-image">
-
-            <img src="bild.jbg" alt="Profilbild von Rilind Daki, Sanitärinstallateur EFZ" loading="lazy">
+            <img src="Bild.jpg" alt="Profilbild von Rilind Daki, Sanitärinstallateur EFZ" loading="lazy">
         </div>
         <div class="profile-details">
             <ul>
@@ -47,8 +45,8 @@
         </div>
     </section>
     
-    <section id="berufliche-laufbahn" class="berufliche-laufbahn" role="region" aria-labelledby="laufbahn-heading">
-        <h2 id="laufbahn-heading">Berufliche Laufbahn</h2>
+    <section id="berufliche-laufbahn">
+        <h2>Berufliche Laufbahn</h2>
         <div class="laufbahn-item">
             <h3>Bauleitender Monteur - Equans AG, Bern</h3>
             <p>09.2022 - Heute</p>
@@ -85,8 +83,8 @@
         </div>
     </section>
     
-    <section id="ausbildung" class="ausbildung" role="region" aria-labelledby="ausbildung-heading">
-        <h2 id="ausbildung-heading">Ausbildung</h2>
+    <section id="ausbildung">
+        <h2>Ausbildung</h2>
         <div class="ausbildung-item">
             <h3>Dipl. Kaufmann VSH, Handelsdiplom VSH - Feusi, Bern</h3>
             <p>02.2021 - 02.2022</p>
@@ -97,8 +95,8 @@
         </div>
     </section>
     
-    <section id="kenntnisse" class="kenntnisse" role="region" aria-labelledby="kenntnisse-heading">
-        <h2 id="kenntnisse-heading">Kenntnisse & Fähigkeiten</h2>
+    <section id="kenntnisse">
+        <h2>Kenntnisse & Fähigkeiten</h2>
         <ul>
             <li>Deutsch (Muttersprache)</li>
             <li>Albanisch (Muttersprache)</li>
@@ -112,8 +110,8 @@
         </ul>
     </section>
     
-    <section id="militärdienst" class="militärdienst" role="region" aria-labelledby="militärdienst-heading">
-        <h2 id="militärdienst-heading">Militärdienst Schweizerische Armee</h2>
+    <section id="militärdienst">
+        <h2>Militärdienst Schweizerische Armee</h2>
         <div class="militär-item">
             <h3>Wachtmeister, Funktion Führungstaffelsoldat - Kaserne Thun</h3>
             <p>01.2018 - 05.2018</p>
@@ -124,26 +122,32 @@
         </div>
     </section>
     
-    <section id="hobbys" class="hobbys" role="region" aria-labelledby="hobbys-heading">
-        <h2 id="hobbys-heading">Hobbys</h2>
+    <section id="hobbys">
+        <h2>Hobbys</h2>
         <p>Sport: Fussball, Fitness und Schwimmen</p>
         <p>Reisen</p>
     </section>
     
-    <footer id="kontakt" role="contentinfo">
-        <form id="contactForm" action="https://dein-server-endpunkt.com" method="POST">
-            <label for="message">Schicke mir eine Nachricht:</label>
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <!-- Kontaktformular -->
+        <form action="https://formspree.io/f/xeojpbvw" method="POST">
+            <label for="email">Ihre E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Ihre Nachricht:</label>
             <textarea id="message" name="message" required></textarea>
+
             <button type="submit">Senden</button>
         </form>
-    </footer>
+    </section>
 
     <!-- Scroll to Top Button -->
     <button onclick="scrollToTop()" id="scrollTopBtn">Top</button>
 
-    <!-- JavaScript for Scroll to Top Functionality -->
+    <!-- JavaScript für Scroll to Top Funktionalität -->
     <script>
-        // Schaltfläche anzeigen, wenn der Benutzer scrollt
+        // Scroll to Top Button anzeigen, wenn der Benutzer scrollt
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
@@ -159,15 +163,6 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-
-        // Formular-Validierung
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            var message = document.getElementById("message").value.trim();
-            if (message.length < 10) {
-                alert("Die Nachricht muss mindestens 10 Zeichen lang sein.");
-                event.preventDefault();
-            }
-        });
     </script>
 </body>
 </html>
