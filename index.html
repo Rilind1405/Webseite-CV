@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rilind Daki - CV</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Rilind Daki - Sanitärinstallateur EFZ, dipl. Kaufmann VSH</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Lebenslauf von Rilind Daki, einem erfahrenen Sanitärinstallateur EFZ und diplomierten Kaufmann VSH in Bern. Mit umfangreicher Erfahrung und vielseitigen Fähigkeiten.">
+    <meta name="keywords" content="Rilind Daki, Sanitärinstallateur, EFZ, Kaufmann, VSH, Bern, Lebenslauf">
+    <meta name="author" content="Rilind Daki">
+    <!-- Optimiertes Laden von CSS -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <!-- Google Fonts Einbindung -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- Navigation mit Rolle und Aria-Label -->
+    <nav role="navigation" aria-label="Hauptnavigation">
         <ul>
             <li><a href="#profile">Profil</a></li>
             <li><a href="#berufliche-laufbahn">Berufliche Laufbahn</a></li>
@@ -20,14 +28,15 @@
         </ul>
     </nav>
 
-    <header>
+    <header role="banner">
         <h1>Rilind Daki (1997)</h1>
         <p>Sanitärinstallateur EFZ, dipl. Kaufmann VSH</p>
     </header>
     
-    <section id="profile" class="profile">
+    <section id="profile" class="profile" role="region">
         <div class="profile-image">
-            <img src="Bild.jpg" alt="Profilbild von Rilind Daki">
+
+            <img src="bild.jbg" alt="Profilbild von Rilind Daki, Sanitärinstallateur EFZ" loading="lazy">
         </div>
         <div class="profile-details">
             <ul>
@@ -38,8 +47,8 @@
         </div>
     </section>
     
-    <section id="berufliche-laufbahn" class="berufliche-laufbahn">
-        <h2>Berufliche Laufbahn</h2>
+    <section id="berufliche-laufbahn" class="berufliche-laufbahn" role="region" aria-labelledby="laufbahn-heading">
+        <h2 id="laufbahn-heading">Berufliche Laufbahn</h2>
         <div class="laufbahn-item">
             <h3>Bauleitender Monteur - Equans AG, Bern</h3>
             <p>09.2022 - Heute</p>
@@ -76,8 +85,8 @@
         </div>
     </section>
     
-    <section id="ausbildung" class="ausbildung">
-        <h2>Ausbildung</h2>
+    <section id="ausbildung" class="ausbildung" role="region" aria-labelledby="ausbildung-heading">
+        <h2 id="ausbildung-heading">Ausbildung</h2>
         <div class="ausbildung-item">
             <h3>Dipl. Kaufmann VSH, Handelsdiplom VSH - Feusi, Bern</h3>
             <p>02.2021 - 02.2022</p>
@@ -88,8 +97,8 @@
         </div>
     </section>
     
-    <section id="kenntnisse" class="kenntnisse">
-        <h2>Kenntnisse & Fähigkeiten</h2>
+    <section id="kenntnisse" class="kenntnisse" role="region" aria-labelledby="kenntnisse-heading">
+        <h2 id="kenntnisse-heading">Kenntnisse & Fähigkeiten</h2>
         <ul>
             <li>Deutsch (Muttersprache)</li>
             <li>Albanisch (Muttersprache)</li>
@@ -103,8 +112,8 @@
         </ul>
     </section>
     
-    <section id="militärdienst" class="militärdienst">
-        <h2>Militärdienst Schweizerische Armee</h2>
+    <section id="militärdienst" class="militärdienst" role="region" aria-labelledby="militärdienst-heading">
+        <h2 id="militärdienst-heading">Militärdienst Schweizerische Armee</h2>
         <div class="militär-item">
             <h3>Wachtmeister, Funktion Führungstaffelsoldat - Kaserne Thun</h3>
             <p>01.2018 - 05.2018</p>
@@ -115,18 +124,50 @@
         </div>
     </section>
     
-    <section id="hobbys" class="hobbys">
-        <h2>Hobbys</h2>
+    <section id="hobbys" class="hobbys" role="region" aria-labelledby="hobbys-heading">
+        <h2 id="hobbys-heading">Hobbys</h2>
         <p>Sport: Fussball, Fitness und Schwimmen</p>
         <p>Reisen</p>
     </section>
     
-    <footer id="kontakt">
-        <form action="https://dein-server-endpunkt.com" method="POST">
+    <footer id="kontakt" role="contentinfo">
+        <form id="contactForm" action="https://dein-server-endpunkt.com" method="POST">
             <label for="message">Schicke mir eine Nachricht:</label>
             <textarea id="message" name="message" required></textarea>
             <button type="submit">Senden</button>
         </form>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn">Top</button>
+
+    <!-- JavaScript for Scroll to Top Functionality -->
+    <script>
+        // Schaltfläche anzeigen, wenn der Benutzer scrollt
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollTopBtn").style.display = "block";
+            } else {
+                document.getElementById("scrollTopBtn").style.display = "none";
+            }
+        }
+
+        // Beim Klicken nach oben scrollen
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Formular-Validierung
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            var message = document.getElementById("message").value.trim();
+            if (message.length < 10) {
+                alert("Die Nachricht muss mindestens 10 Zeichen lang sein.");
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>

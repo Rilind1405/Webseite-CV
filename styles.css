@@ -1,32 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 header {
-    background-color: #1d4f91;
+    background-color: #2c3e50;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    animation: fadeIn 1s ease-in;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.8rem;
+    font-weight: 700;
 }
 
 header p {
-    margin-top: 5px;
-    font-size: 1.2rem;
+    margin-top: 10px;
+    font-size: 1.3rem;
 }
 
 /* Navigation */
 nav {
-    background-color: #333;
-    padding: 10px 0;
+    background-color: #34495e;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -38,17 +41,24 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ecf0f1;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+    outline: none;
 }
 
+nav ul li a:focus,
 nav ul li a:hover {
+    color: #e74c3c;
     text-decoration: underline;
+    outline: 2px solid #e74c3c;
+    outline-offset: 2px;
 }
 
 /* Profilbereich */
@@ -56,19 +66,20 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 20px;
+    margin: 40px;
     background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .profile-image img {
-    width: 200px;
-    height: 250px;
+    width: 220px;
+    height: 280px;
     border-radius: 10px;
     object-fit: cover;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .profile-details ul {
@@ -77,48 +88,50 @@ nav ul li a:hover {
 }
 
 .profile-details ul li {
-    margin: 10px 0;
-    font-size: 1.1rem;
+    margin: 15px 0;
+    font-size: 1.2rem;
 }
 
 /* Laufbahn, Ausbildung etc. */
 section {
-    margin: 20px;
-    padding: 20px;
+    margin: 40px;
+    padding: 30px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #34495e;
 }
 
 section p, section ul {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 section ul {
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 section ul li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .laufbahn-item, .ausbildung-item, .militär-item {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #1d4f91;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #2c3e50;
     color: #fff;
 }
 
@@ -129,26 +142,64 @@ footer form {
 }
 
 footer textarea {
-    width: 300px;
-    height: 100px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
+    width: 350px;
+    height: 120px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 footer button {
-    padding: 10px 20px;
+    padding: 12px 30px;
     background-color: #fff;
-    color: #1d4f91;
+    color: #2c3e50;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 footer button:hover {
     background-color: #ccc;
+}
+
+footer button:focus {
+    outline: 2px solid #2c3e50;
+    outline-offset: 2px;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+#scrollTopBtn:hover,
+#scrollTopBtn:focus {
+    background-color: #333;
+    outline: 2px solid #fff;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Klasse für Fade-Effekte */
+.animate-fade {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Responsive Design */
@@ -156,6 +207,7 @@ footer button:hover {
     .profile {
         flex-direction: column;
         text-align: center;
+        margin: 20px;
     }
 
     .profile-image {
@@ -167,6 +219,11 @@ footer button:hover {
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 15px 0;
+    }
+
+    section {
+        margin: 20px;
+        padding: 20px;
     }
 }
